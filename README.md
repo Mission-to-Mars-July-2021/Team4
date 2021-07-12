@@ -11,7 +11,9 @@ More Pizza toppings Whoo
 ## Scrum Git
 Edward
 Rachel
-Melissa\nChloe
+Melissa
+<br>
+Chloe
 
 ## Day 1 Retrospective
 
