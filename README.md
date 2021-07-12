@@ -1,14 +1,14 @@
-# TeamName
+# StarDust
 
 TinkerCad Circuit basic design URL is
 
 https://www.tinkercad.com/things/lcT53rX5qdN-team4/editel?sharecode=6oXRsp0dlEFtduOcPXr6HKpqPX1kxMogPu2RPSw3Elk
 
 ## Team Values
-What are your team values?
+Communication 
 
 ## Scrum Git
-Replace with your name and item. 
+Melissa Jane 
 
 ## Day 1 Retrospective
 
