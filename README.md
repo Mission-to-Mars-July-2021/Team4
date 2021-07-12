@@ -28,6 +28,8 @@ We didn't talk to each other
 
 ### What we will do more of tomorrow
 
+Communicate more 
+
 ### What we will do less of tomorrow
 
 ## Day 2 Retrospective
