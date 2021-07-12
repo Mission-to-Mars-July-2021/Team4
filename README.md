@@ -6,7 +6,7 @@ https://www.tinkercad.com/things/lcT53rX5qdN-team4/editel?sharecode=6oXRsp0dlEFt
 
 ## Team Values
 Values I guess...
-More Pizza
+More Pizza toppings
 
 ## Scrum Git
 Edward Willetts
