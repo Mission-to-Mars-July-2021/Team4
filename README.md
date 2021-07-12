@@ -36,6 +36,7 @@ Chloe
 ## Final Retrospective
 
 ## Notes
+>Remember These:
 ```
 git add .
 git commit -m "Saving"
