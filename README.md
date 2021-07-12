@@ -35,6 +35,14 @@ Chloe
 
 ## Final Retrospective
 
+## Notes
+```
+git add .
+git commit -m "Saving"
+git push origin main
+git status
+```
+
 This is the readme. Formatting of text is as follows.
 
 # Largest Heading
