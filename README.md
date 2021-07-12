@@ -10,7 +10,9 @@ More Pizza toppings Whoo
 
 ## Scrum Git
 Edward
+<br>
 Rachel
+<br>
 Melissa
 <br>
 Chloe
