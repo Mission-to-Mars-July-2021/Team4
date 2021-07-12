@@ -20,7 +20,11 @@ Chloe
 
 ### What went well
 
+We completed Story 1
+
 ### What didn't go well
+
+We didn't talk to each other
 
 ### What we will do more of tomorrow
 
