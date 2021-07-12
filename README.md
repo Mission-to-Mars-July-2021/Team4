@@ -20,7 +20,7 @@ Chloe
 
 ### What went well
 
-We completed Story 1
+We completed Story 1 and Story 2
 
 ### What didn't go well
 
