@@ -1,14 +1,13 @@
-# Star Dust
+# Welcome To Star Dust!
 
 TinkerCad Circuit basic design URL is
 
 https://www.tinkercad.com/things/lcT53rX5qdN-team4/editel?sharecode=6oXRsp0dlEFtduOcPXr6HKpqPX1kxMogPu2RPSw3Elk
 
 ## Team Values
-Values I guess...
-More Pizza toppings Whoo
+Code
 
-## Scrum Git
+## Our Group
 Edward
 <br>
 Rachel
