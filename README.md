@@ -9,7 +9,10 @@ Values I guess...
 More Pizza toppings Whoo
 
 ## Scrum Git
-Edward Willetts
+Edward
+Rachel
+Melissa
+Chloe
 
 ## Day 1 Retrospective
 
