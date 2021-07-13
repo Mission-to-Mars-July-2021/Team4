@@ -34,6 +34,8 @@ Communicate more about the work and what we are doing
 
 ## Day 2 Retrospective
 
+Uploaded Story 3 to GitHub
+
 ## Day 3 Retrospective
 
 ## Day 4 Retrospective
@@ -43,6 +45,10 @@ Communicate more about the work and what we are doing
 ## Notes
 >Remember These:
 ```
+Pull:
+git pull origin main
+
+Push:
 git add .
 git commit -m "Saving"
 git push origin main
