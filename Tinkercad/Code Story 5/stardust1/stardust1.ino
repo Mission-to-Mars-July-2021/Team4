@@ -31,6 +31,10 @@ void loop(){
   
   doZigzag();
   
+  if (zigzagcounter == 5){
+    delay(20000000);
+  }
+  
 }
 
 void LeftMotorISR(){
