@@ -18,19 +18,12 @@ Chloe
 
 ## Day 1 Retrospective
 
-### What went well
-
-We completed Story 1 and Story 2
-
-### What didn't go well
-
+Completed Story 1 and Story 2
+<br>
 We didn't talk to each other
-
-### What we will do more of tomorrow
-
+<br>
 Communicate more about the work and what we are doing
-
-### What we will do less of tomorrow
+<br>
 
 ## Day 2 Retrospective
 
