@@ -28,7 +28,7 @@ We didn't talk to each other
 
 ### What we will do more of tomorrow
 
-Communicate more 
+Communicate more about the work and what we are doing
 
 ### What we will do less of tomorrow
 
