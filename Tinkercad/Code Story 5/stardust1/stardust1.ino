@@ -52,21 +52,29 @@ void RightMotorISR(){
   }
 }
 
-void turnleft(){
+void forwardsturnleft(){
   analogWrite(ENABLELEFT, 150);		//Left Angle
   analogWrite(ENABLERIGHT, 0);		//Right Angle
+  digitalWrite(FWDLEFT, HIGH);
+  digitalWrite(FWDRIGHT, HIGH);
+  digitalWrite(REVRIGHT, LOW);
+  digitalWrite(REVLEFT, LOW);
 }
 
-void turnright(){
+void forwardsturnright(){
   analogWrite(ENABLELEFT, 0);		//Left Angle
   analogWrite(ENABLERIGHT, 150);	//Right Angle
+  digitalWrite(FWDLEFT, HIGH);
+  digitalWrite(FWDRIGHT, HIGH);
+  digitalWrite(REVRIGHT, LOW);
+  digitalWrite(REVLEFT, LOW);
 }
 
-void forwards(){
-  digitalWrite(FWDRIGHT, HIGH);				
+void forwards(){		
   analogWrite(ENABLERIGHT, 200);		
   analogWrite(ENABLELEFT, 200);			
-  digitalWrite(FWDLEFT, HIGH);  
+  digitalWrite(FWDLEFT, HIGH);
+  digitalWrite(FWDRIGHT, HIGH);
   digitalWrite(REVRIGHT, LOW);
   digitalWrite(REVLEFT, LOW);
 }
@@ -90,28 +98,11 @@ void stop(){
 }
 
 void doZigzag(){
-  turnleft();
-  delay(1000);
   
-  stop();
-  delay(1000);
-  
-  forwards();
+  forwardsturnleft();
   delay(2000);
   
-  stop();
-  delay(1000);
-  
-  turnright();
-  delay(1000);
-  
-  stop();
-  delay(1000);
-  
-  forwards();
-  delay(2000);
-  
-  stop();
+  forwardsturnright();
   delay(2000);
   
   zigzagcounter++;
