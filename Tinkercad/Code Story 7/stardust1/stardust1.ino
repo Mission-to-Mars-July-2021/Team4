@@ -38,8 +38,8 @@ void loop(){
   
   forwardcheck(150);	//Checks the counters at the speed of 150
   
-  if (boxloop != 94){
-    if (leftcounter >= 1){
+  if (boxloop != 3){
+    if (leftcounter >= 94){
       stop();
       turnleft(200);
       delay(1000);
