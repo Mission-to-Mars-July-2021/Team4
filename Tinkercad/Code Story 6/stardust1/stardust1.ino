@@ -36,6 +36,11 @@ void loop(){
   
   forwardcheck(150);	//Checks the counters at the speed of 150
   
+  if (millis() >= 10000){
+    stop();
+    exit(0);
+  }
+  
 }
 
 void LeftMotorISR(){
