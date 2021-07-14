@@ -27,7 +27,8 @@ Communicate more about the work and what we are doing
 
 ## Day 2 Retrospective
 
-Uploaded Story 3 to GitHub
+Finished story 3, 4 and almost 5. 
+Communication was a lot better
 
 ## Day 3 Retrospective
 
