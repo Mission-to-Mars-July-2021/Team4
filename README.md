@@ -32,7 +32,7 @@ Communication was a lot better
 
 ## Day 3 Retrospective
 
-We completed multiple stories (almost onto story 8)
+We completed multiple stories (ready to test story 7 tomorrow morning)
 Comumnication was even better than yesterday, we are working as a team much more and listening to everyones ideas. 
 
 ## Day 4 Retrospective
