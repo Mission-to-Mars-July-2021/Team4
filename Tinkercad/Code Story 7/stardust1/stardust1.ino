@@ -13,6 +13,8 @@ volatile int rightcounter = 0;
 
 volatile int zigzagcounter = 0;
 
+int boxloop = 0;
+
 void setup(){
   
   pinMode(FWDRIGHT, OUTPUT);
@@ -36,7 +38,20 @@ void loop(){
   
   forwardcheck(150);	//Checks the counters at the speed of 150
   
-  if (millis() >= 10000){
+  if (boxloop != 4){
+    if (leftcounter >= 90){
+      stop();
+      delay(1000);
+
+      turnleft(150);
+      delay(1000);
+      
+      leftcounter = 0;
+
+      boxloop++;
+    }
+    
+  } else {
     stop();
     exit(0);
   }
@@ -106,6 +121,24 @@ void stop(){
   digitalWrite(REVLEFT, LOW);
   digitalWrite(REVRIGHT, LOW);
 
+}
+
+void turnleft(int SPEED){
+  analogWrite(ENABLELEFT, SPEED);	
+  analogWrite(ENABLERIGHT, SPEED);		
+  digitalWrite(FWDLEFT, LOW);
+  digitalWrite(FWDRIGHT, HIGH);
+  digitalWrite(REVRIGHT, LOW);
+  digitalWrite(REVLEFT, HIGH);
+}
+
+void turnright(int SPEED){
+  analogWrite(ENABLELEFT, SPEED);	
+  analogWrite(ENABLERIGHT, SPEED);		
+  digitalWrite(FWDLEFT, HIGH);
+  digitalWrite(FWDRIGHT, LOW);
+  digitalWrite(REVRIGHT, HIGH);
+  digitalWrite(REVLEFT, LOW);
 }
 
 void doZigzag(){
