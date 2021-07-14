@@ -32,7 +32,7 @@ void loop(){
   
   forwards(150);		//Movesforward at the speed of 150
   
-  delay(1000);
+  delay(500);
   
   forwardcheck(150);	//Checks the counters at the speed of 150
   
