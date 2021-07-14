@@ -1,0 +1,119 @@
+const int FWDRIGHT = 7;
+const int REVRIGHT = 8;
+const int ENABLERIGHT = 9;
+const int ENABLELEFT = 10;
+const int FWDLEFT = 11; 
+const int REVLEFT = 12;
+
+const int LEFT_FEEDBACK = 3;
+const int RIGHT_FEEDBACK = 2;
+
+volatile int leftcounter = 0;
+volatile int rightcounter = 0;
+
+volatile int zigzagcounter = 0;
+
+void setup(){
+  
+  pinMode(FWDRIGHT, OUTPUT);
+  pinMode(REVRIGHT, OUTPUT);
+  pinMode(ENABLERIGHT, OUTPUT);
+  pinMode(ENABLELEFT, OUTPUT);
+  pinMode(FWDLEFT, OUTPUT);
+  pinMode(REVLEFT, OUTPUT);
+  Serial.begin(115200);
+  attachInterrupt(digitalPinToInterrupt(LEFT_FEEDBACK), LeftMotorISR, RISING);
+  attachInterrupt(digitalPinToInterrupt(RIGHT_FEEDBACK), RightMotorISR, RISING);
+  
+}
+
+void loop(){
+  
+  Serial.println(millis());
+  if(millis() >= 10000){
+    stop();
+  } else {
+    forwards(150);
+  }
+  
+}
+
+void LeftMotorISR(){
+  leftcounter++;
+  Serial.print("Left counter: ");
+  Serial.println(leftcounter);
+  if(leftcounter == 10){
+    Serial.println("Left counter has reached 10!");
+  }
+}  
+
+void RightMotorISR(){ 
+  rightcounter++;		//adds one to the counter on each motor revolution
+  Serial.print("Right counter: ");
+  Serial.println(rightcounter);
+  if(rightcounter == 10){
+    Serial.println("Right counter has reached 10!");
+  }
+}
+
+void forwardsturnleft(){
+  analogWrite(ENABLELEFT, 200);		//Left Angle
+  analogWrite(ENABLERIGHT, 60);		//Right Angle
+  digitalWrite(FWDLEFT, HIGH);
+  digitalWrite(FWDRIGHT, HIGH);
+  digitalWrite(REVRIGHT, LOW);
+  digitalWrite(REVLEFT, LOW);
+  
+  //This Will Move The Left to 200 analog and 80 on the Right
+}
+void forwardsturnright(){
+  analogWrite(ENABLELEFT, 60);		//Left Angle
+  analogWrite(ENABLERIGHT, 200);	//Right Angle
+  digitalWrite(FWDLEFT, HIGH);
+  digitalWrite(FWDRIGHT, HIGH);
+  digitalWrite(REVRIGHT, LOW);
+  digitalWrite(REVLEFT, LOW);
+}
+
+void forwards(const int SPEED){		
+  analogWrite(ENABLERIGHT, SPEED);		
+  analogWrite(ENABLELEFT, SPEED);			
+  digitalWrite(FWDLEFT, HIGH);
+  digitalWrite(FWDRIGHT, HIGH);
+  digitalWrite(REVRIGHT, LOW);
+  digitalWrite(REVLEFT, LOW);
+}
+
+void reverse(const int SPEED){
+  analogWrite(ENABLERIGHT, SPEED);
+  analogWrite(ENABLELEFT, SPEED);			
+  digitalWrite(REVRIGHT, HIGH);				
+  digitalWrite(REVLEFT, HIGH);	
+  digitalWrite(FWDLEFT, LOW);
+  digitalWrite(FWDRIGHT, LOW);
+}
+
+void stop(){
+  analogWrite(ENABLELEFT, 0);
+  analogWrite(ENABLERIGHT, 0);			
+  digitalWrite(FWDLEFT, LOW);
+  digitalWrite(FWDRIGHT, LOW);
+  digitalWrite(REVLEFT, LOW);
+  digitalWrite(REVRIGHT, LOW);
+
+}
+
+void doZigzag(){
+  forwardsturnleft();
+  delay(2000);
+  
+  forwards(100);
+  delay(3000);
+  
+  forwardsturnright();
+  delay(2000);
+  forwards(100);
+  delay(3000);
+  
+  zigzagcounter++;
+}
