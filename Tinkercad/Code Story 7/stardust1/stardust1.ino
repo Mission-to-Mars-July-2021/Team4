@@ -39,7 +39,7 @@ void loop(){
   forwardcheck(150);	//Checks the counters at the speed of 150
   
   if (boxloop != 3){
-    if (leftcounter >= 94){
+    if (leftcounter >= 110){
       stop();
       turnleft(200);
       delay(1000);
@@ -51,7 +51,7 @@ void loop(){
     
   } else {
     delay(1000);
-    turnleft(200);
+    turnleft(210);
     delay(1000);
     
     stop();
