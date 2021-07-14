@@ -28,13 +28,13 @@ void setup(){
 }
 
 void loop(){
-  
   Serial.println(millis());
-  if(millis() >= 10000){
-    stop();
-  } else {
-    forwards(150);
-  }
+  
+  forwards(150);		//Movesforward at the speed of 150
+  
+  delay(1000);
+  
+  forwardcheck(150);	//Checks the counters at the speed of 150
   
 }
 
@@ -75,18 +75,18 @@ void forwardsturnright(){
   digitalWrite(REVLEFT, LOW);
 }
 
-void forwards(const int SPEED){		
+void forwards(int SPEED){
+  analogWrite(ENABLELEFT, SPEED);	
   analogWrite(ENABLERIGHT, SPEED);		
-  analogWrite(ENABLELEFT, SPEED);			
   digitalWrite(FWDLEFT, HIGH);
   digitalWrite(FWDRIGHT, HIGH);
   digitalWrite(REVRIGHT, LOW);
   digitalWrite(REVLEFT, LOW);
 }
 
-void reverse(const int SPEED){
-  analogWrite(ENABLERIGHT, SPEED);
-  analogWrite(ENABLELEFT, SPEED);			
+void reverse(){
+  analogWrite(ENABLELEFT, 100);
+  analogWrite(ENABLERIGHT, 100);		
   digitalWrite(REVRIGHT, HIGH);				
   digitalWrite(REVLEFT, HIGH);	
   digitalWrite(FWDLEFT, LOW);
@@ -116,4 +116,24 @@ void doZigzag(){
   delay(3000);
   
   zigzagcounter++;
+}
+
+void forwardcheck(int CHECKSPEED){
+  if (rightcounter < leftcounter){
+    Serial.println("Moving right wheel to balance...");
+    analogWrite(ENABLERIGHT, CHECKSPEED + 20);
+
+  } else if (rightcounter > leftcounter){
+    Serial.println("Moving left wheel to balance...");
+    analogWrite(ENABLELEFT, CHECKSPEED + 20);
+
+  } else if (leftcounter < CHECKSPEED) {
+    analogWrite(ENABLELEFT, CHECKSPEED);
+
+  } else if (rightcounter < CHECKSPEED) {
+    analogWrite(ENABLERIGHT, CHECKSPEED);
+
+  } else {
+    Serial.println("Continuing...");
+  }
 }
