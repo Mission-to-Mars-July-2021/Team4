@@ -37,7 +37,7 @@ Comumnication was even better than yesterday, we are working as a team much more
 
 ## Day 4 Retrospective
 
-Just completed story 3 (a lot of trials)
+Just completed story 3 (a lot of trial and error!)
 
 ## Final Retrospective
 
