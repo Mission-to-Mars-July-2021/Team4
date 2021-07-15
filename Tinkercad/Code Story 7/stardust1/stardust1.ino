@@ -32,13 +32,13 @@ void setup(){
 void loop(){
   Serial.println(millis());
   
-  while (boxloop != 3){
+  while (boxloop != 4){
     forwards(150);				//Movesforward at the speed of 150
     forwardcheck(150);			//Checks the counters at the speed of 150
     
     if (leftcounter >= 175){	//Checks the left counter for 170 clicks
       stop();					//180
-      turnleft(235);			//Angle
+      turnleft(225);			//Angle
       delay(1000);
       stop();
       leftcounter = 0;
@@ -46,11 +46,6 @@ void loop(){
     }
   }
   
-  stop();
-  
-  turnleft(235);				//Angle
-  delay(1000);
-
   stop();
   exit(0);
 }
