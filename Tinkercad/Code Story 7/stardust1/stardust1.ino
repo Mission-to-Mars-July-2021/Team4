@@ -32,16 +32,22 @@ void setup(){
 void loop(){
   Serial.println(millis());
   
-  forwards(150);		//Movesforward at the speed of 150
+  forwards(150);    //Movesforward at the speed of 150
   
   delay(1000);
   
-  forwardcheck(150);	//Checks the counters at the speed of 150
+  forwardcheck(150);  //Checks the counters at the speed of 150
   
   if (boxloop != 3){
+<<<<<<< HEAD
     if (leftcounter >= 180){	//Checks the left counter for 170 clicks
+=======
+
+    if (leftcounter >= 200){  //Checks the left counter for 170 clicks
+>>>>>>> c5053a32dd17515462cbe7cfb95c0227203eed71
       stop();
-      turnleft(240);						//Angle
+      turnleft(240);            //Angle
+
       delay(1000);
       stop();
       delay(100);
@@ -51,8 +57,14 @@ void loop(){
     }
     
   } else {
+<<<<<<< HEAD
     stop();
     turnleft(240);							//Angle
+=======
+
+    turnleft(240);              //Angle
+
+>>>>>>> c5053a32dd17515462cbe7cfb95c0227203eed71
     delay(1000);
     
     stop();
@@ -71,7 +83,7 @@ void LeftMotorISR(){
 }  
 
 void RightMotorISR(){ 
-  rightcounter++;		//adds one to the counter on each motor revolution
+  rightcounter++;   //adds one to the counter on each motor revolution
   Serial.print("Right counter: ");
   Serial.println(rightcounter);
   if(rightcounter == 10){
@@ -80,8 +92,8 @@ void RightMotorISR(){
 }
 
 void forwardsturnleft(){
-  analogWrite(ENABLELEFT, 200);		//Left Angle
-  analogWrite(ENABLERIGHT, 60);		//Right Angle
+  analogWrite(ENABLELEFT, 200);   //Left Angle
+  analogWrite(ENABLERIGHT, 60);   //Right Angle
   digitalWrite(FWDLEFT, HIGH);
   digitalWrite(FWDRIGHT, HIGH);
   digitalWrite(REVRIGHT, LOW);
@@ -90,8 +102,8 @@ void forwardsturnleft(){
   //This Will Move The Left to 200 analog and 80 on the Right
 }
 void forwardsturnright(){
-  analogWrite(ENABLELEFT, 60);		//Left Angle
-  analogWrite(ENABLERIGHT, 200);	//Right Angle
+  analogWrite(ENABLELEFT, 60);    //Left Angle
+  analogWrite(ENABLERIGHT, 200);  //Right Angle
   digitalWrite(FWDLEFT, HIGH);
   digitalWrite(FWDRIGHT, HIGH);
   digitalWrite(REVRIGHT, LOW);
@@ -99,8 +111,8 @@ void forwardsturnright(){
 }
 
 void forwards(int SPEED){
-  analogWrite(ENABLELEFT, SPEED);	
-  analogWrite(ENABLERIGHT, SPEED);		
+  analogWrite(ENABLELEFT, SPEED); 
+  analogWrite(ENABLERIGHT, SPEED);    
   digitalWrite(FWDLEFT, HIGH);
   digitalWrite(FWDRIGHT, HIGH);
   digitalWrite(REVRIGHT, LOW);
@@ -109,16 +121,16 @@ void forwards(int SPEED){
 
 void reverse(){
   analogWrite(ENABLELEFT, 100);
-  analogWrite(ENABLERIGHT, 100);		
-  digitalWrite(REVRIGHT, HIGH);				
-  digitalWrite(REVLEFT, HIGH);	
+  analogWrite(ENABLERIGHT, 100);    
+  digitalWrite(REVRIGHT, HIGH);       
+  digitalWrite(REVLEFT, HIGH);  
   digitalWrite(FWDLEFT, LOW);
   digitalWrite(FWDRIGHT, LOW);
 }
 
 void stop(){
   analogWrite(ENABLELEFT, 0);
-  analogWrite(ENABLERIGHT, 0);			
+  analogWrite(ENABLERIGHT, 0);      
   digitalWrite(FWDLEFT, LOW);
   digitalWrite(FWDRIGHT, LOW);
   digitalWrite(REVLEFT, LOW);
@@ -127,8 +139,8 @@ void stop(){
 }
 
 void turnleft(int SPEED){
-  analogWrite(ENABLELEFT, SPEED);	
-  analogWrite(ENABLERIGHT, SPEED);		
+  analogWrite(ENABLELEFT, SPEED); 
+  analogWrite(ENABLERIGHT, SPEED);    
   digitalWrite(FWDLEFT, LOW);
   digitalWrite(FWDRIGHT, HIGH);
   digitalWrite(REVRIGHT, LOW);
@@ -136,8 +148,8 @@ void turnleft(int SPEED){
 }
 
 void turnright(int SPEED){
-  analogWrite(ENABLELEFT, SPEED);	
-  analogWrite(ENABLERIGHT, SPEED);		
+  analogWrite(ENABLELEFT, SPEED); 
+  analogWrite(ENABLERIGHT, SPEED);    
   digitalWrite(FWDLEFT, HIGH);
   digitalWrite(FWDRIGHT, LOW);
   digitalWrite(REVRIGHT, HIGH);
