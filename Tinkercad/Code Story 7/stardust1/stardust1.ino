@@ -36,11 +36,14 @@ void loop(){
     forwards(150);				//Movesforward at the speed of 150
     forwardcheck(150);			//Checks the counters at the speed of 150
     
-    if (leftcounter >= 175){	//Checks the left counter for 170 clicks
-      stop();					//180
-      turnleft(225);			//Angle
-      delay(1000);
+    if (leftcounter >= 172){	//Checks the left counter for 170 clicks
       stop();
+      delay(1000);
+      
+      turnleft(220);			//Angle
+      stop();
+      delay(1000);
+      
       leftcounter = 0;
       boxloop++;
     }
