@@ -39,17 +39,19 @@ void loop(){
   forwardcheck(150);	//Checks the counters at the speed of 150
   
   if (boxloop != 3){
-    if (leftcounter >= 200){	//Checks the left counter for 170 clicks
+    if (leftcounter >= 180){	//Checks the left counter for 170 clicks
       stop();
       turnleft(240);						//Angle
       delay(1000);
-      
+      stop();
+      delay(100);
       leftcounter = 0;
 
       boxloop++;
     }
     
   } else {
+    stop();
     turnleft(240);							//Angle
     delay(1000);
     
