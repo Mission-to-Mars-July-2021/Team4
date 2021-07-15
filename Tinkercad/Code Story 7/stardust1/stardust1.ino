@@ -41,7 +41,7 @@ void loop(){
   if (boxloop != 3){
     if (leftcounter >= 110){
       stop();
-      turnleft(200);
+      turnleft(210);
       delay(1000);
       
       leftcounter = 0;
