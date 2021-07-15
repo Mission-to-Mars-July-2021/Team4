@@ -32,33 +32,27 @@ void setup(){
 void loop(){
   Serial.println(millis());
   
-  forwards(150);		//Movesforward at the speed of 150
-  
-  delay(1000);
-  
-  forwardcheck(150);	//Checks the counters at the speed of 150
-  
-  if (boxloop != 3){
-    if (leftcounter >= 180){	//Checks the left counter for 170 clicks
-      stop();
-      turnleft(240);						//Angle
+  while (boxloop != 3){
+    forwards(150);				//Movesforward at the speed of 150
+    forwardcheck(150);			//Checks the counters at the speed of 150
+    
+    if (leftcounter >= 175){	//Checks the left counter for 170 clicks
+      stop();					//180
+      turnleft(235);			//Angle
       delay(1000);
       stop();
-      delay(100);
       leftcounter = 0;
-
       boxloop++;
     }
-    
-  } else {
-    stop();
-    turnleft(240);							//Angle
-    delay(1000);
-    
-    stop();
-    exit(0);
   }
   
+  stop();
+  
+  turnleft(235);				//Angle
+  delay(1000);
+
+  stop();
+  exit(0);
 }
 
 void LeftMotorISR(){
