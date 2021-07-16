@@ -30,7 +30,7 @@ void setup(){
 }
 
 void loop(){
-  doFigure8();
+  doBox(3);
   exit(0);
 }
 
@@ -152,54 +152,95 @@ void forwardcheck(int CHECKSPEED){
   }
 }
 
-void doBox(){
-  while (boxloop != 4){
-    forwards(150);				//Movesforward at the speed of 150
-    delay(100);
-    forwardcheck(150);			//Checks the counters at the speed of 150
+void doBox(int DIRECTION){
+  if (DIRECTION == 1){
+    while (boxloop != 4){
+      forwards(150);				//Movesforward at the speed of 150
+      delay(100);
+      forwardcheck(150);			//Checks the counters at the speed of 150
 
-    if (leftcounter >= 172){	//Checks the left counter for 172 clicks
-      stop();
-      delay(1000);
+      if (leftcounter >= 172){	//Checks the left counter for 172 clicks
+        stop();
+        delay(1000);
 
-      turnleft(200);			//Angle
-      delay(950);
+        turnleft(200);			//Angle
+        delay(950);
 
-      stop();
-      delay(1000);
+        stop();
+        delay(1000);
 
-      leftcounter = 0;
-      boxloop++;
+        leftcounter = 0;
+        boxloop++;
+      }
+    }
+    
+  } else if (DIRECTION == 2){
+    
+    while (boxloop != 4){
+      forwards(150);				//Movesforward at the speed of 150
+      delay(100);
+      forwardcheck(150);			//Checks the counters at the speed of 150
+
+      if (leftcounter >= 172){	//Checks the left counter for 172 clicks
+        stop();
+        delay(1000);
+
+        turnright(200);			//Angle
+        delay(950);
+
+        stop();
+        delay(1000);
+
+        leftcounter = 0;
+        boxloop++;
+      }
+    }
+  } else if (DIRECTION == 3){
+    
+    while (boxloop != 4){
+      forwards(150);				//Movesforward at the speed of 150
+      delay(100);
+      forwardcheck(150);			//Checks the counters at the speed of 150
+
+      if (leftcounter >= 172){	//Checks the left counter for 172 clicks
+        stop();
+        delay(1000);
+
+        turnleft(200);			//Angle
+        delay(950);
+
+        stop();
+        delay(1000);
+
+        leftcounter = 0;
+        boxloop++;
+      }
+    }
+    
+    boxloop = 0;
+    
+    while (boxloop != 4){
+      forwards(150);				//Movesforward at the speed of 150
+      delay(100);
+      forwardcheck(150);			//Checks the counters at the speed of 150
+
+      if (leftcounter >= 172){	//Checks the left counter for 172 clicks
+        stop();
+        delay(1000);
+
+        turnright(200);			//Angle
+        delay(950);
+
+        stop();
+        delay(1000);
+
+        leftcounter = 0;
+        boxloop++;
+      }
     }
   }
-  
+    
   stop();
   exit(0);
-  
-}
-
-void doFigure8(){
-  forwardsturnleft();
-  delay(2000);
-  
-  forwardsturnright();
-  delay(4000);
-  
-  forwards(200);
-  delay(1000);
-  
-  forwardsturnleft();
-  delay(8000);
-  
-  forwards(200);
-  delay(1000);
-  
-  forwardsturnright();
-  delay(4000);
-  
-  forwardsturnleft();
-  delay(2000);
-  
-  stop();
   
 }
