@@ -224,12 +224,12 @@ void doBox(int DIRECTION){
       delay(100);
       forwardcheck(150);			//Checks the counters at the speed of 150
 
-      if (leftcounter >= 172){	//Checks the left counter for 172 clicks
+      if (rightcounter >= 172){		//Checks the left counter for 172 clicks
         stop();
         delay(1000);
 
-        turnright(200);			//Angle
-        delay(850);
+        turnright(200);				//Angle
+        delay(750);
 
         stop();
         delay(1000);
