@@ -183,19 +183,19 @@ void doFigure8(){
   delay(2000);
   
   forwardsturnright();
-  delay(3000);
+  delay(4000);
   
   forwards(200);
   delay(1000);
   
   forwardsturnleft();
-  delay(6000);
+  delay(8000);
   
   forwards(200);
   delay(1000);
   
   forwardsturnright();
-  delay(3000);
+  delay(4000);
   
   forwardsturnleft();
   delay(2000);
