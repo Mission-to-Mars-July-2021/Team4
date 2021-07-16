@@ -164,7 +164,7 @@ void doBox(int DIRECTION){
         delay(1000);
 
         turnleft(200);			//Angle
-        delay(950);
+        delay(850);
 
         stop();
         delay(1000);
@@ -186,7 +186,7 @@ void doBox(int DIRECTION){
         delay(1000);
 
         turnright(200);			//Angle
-        delay(950);
+        delay(850);
 
         stop();
         delay(1000);
@@ -207,7 +207,7 @@ void doBox(int DIRECTION){
         delay(1000);
 
         turnleft(200);			//Angle
-        delay(950);
+        delay(850);
 
         stop();
         delay(1000);
@@ -229,7 +229,7 @@ void doBox(int DIRECTION){
         delay(1000);
 
         turnright(200);			//Angle
-        delay(950);
+        delay(850);
 
         stop();
         delay(1000);
