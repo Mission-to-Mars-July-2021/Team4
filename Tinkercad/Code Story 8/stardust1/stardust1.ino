@@ -178,7 +178,7 @@ void doBox(int DIRECTION){
     
     while (boxloop != 4){
       forwards(150);				//Movesforward at the speed of 150
-      delay(100);
+      delay(1000);
       forwardcheck(150);			//Checks the counters at the speed of 150
 
       if (leftcounter >= 172){	//Checks the left counter for 172 clicks
@@ -199,7 +199,7 @@ void doBox(int DIRECTION){
     
     while (boxloop != 4){
       forwards(150);				//Movesforward at the speed of 150
-      delay(100);
+      delay(1000);
       forwardcheck(150);			//Checks the counters at the speed of 150
 
       if (leftcounter >= 172){	//Checks the left counter for 172 clicks
@@ -221,7 +221,7 @@ void doBox(int DIRECTION){
     
     while (boxloop != 4){
       forwards(150);				//Movesforward at the speed of 150
-      delay(100);
+      delay(1000);
       forwardcheck(150);			//Checks the counters at the speed of 150
 
       if (rightcounter >= 172){		//Checks the left counter for 172 clicks
@@ -229,7 +229,7 @@ void doBox(int DIRECTION){
         delay(1000);
 
         turnright(200);				//Angle
-        delay(750);
+        delay(950);
 
         stop();
         delay(1000);
