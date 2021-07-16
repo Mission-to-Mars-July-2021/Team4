@@ -30,34 +30,13 @@ void setup(){
 }
 
 void loop(){
-  Serial.println(millis());
-  
-  while (boxloop != 4){
-    forwards(150);				//Movesforward at the speed of 150
-    forwardcheck(150);			//Checks the counters at the speed of 150
-    
-    if (leftcounter >= 172){	//Checks the left counter for 172 clicks
-      stop();
-      delay(1000);
-      
-      turnleft(220);			//Angle
-      delay(500);
-      
-      stop();
-      delay(1000);
-      
-      leftcounter = 0;
-      boxloop++;
-    }
-  }
-  
-  stop();
+  doFigure8();
   exit(0);
 }
 
 void LeftMotorISR(){
   leftcounter++;
-  Serial.print("Left counter: ");
+  Serial.print("\nLeft counter: ");
   Serial.println(leftcounter);
   if(leftcounter == 10){
     Serial.println("Left counter has reached 10!");
@@ -66,7 +45,7 @@ void LeftMotorISR(){
 
 void RightMotorISR(){ 
   rightcounter++;		//adds one to the counter on each motor revolution
-  Serial.print("Right counter: ");
+  Serial.print("\nRight counter: ");
   Serial.println(rightcounter);
   if(rightcounter == 10){
     Serial.println("Right counter has reached 10!");
@@ -155,11 +134,11 @@ void doZigzag(){
 
 void forwardcheck(int CHECKSPEED){
   if (rightcounter < leftcounter){
-    Serial.println("Moving right wheel to balance...");
+    Serial.println("Moving right tyre to balance...");
     analogWrite(ENABLERIGHT, CHECKSPEED + 20);
 
   } else if (rightcounter > leftcounter){
-    Serial.println("Moving left wheel to balance...");
+    Serial.println("Moving left tyre to balance...");
     analogWrite(ENABLELEFT, CHECKSPEED + 20);
 
   } else if (leftcounter < CHECKSPEED) {
@@ -171,4 +150,56 @@ void forwardcheck(int CHECKSPEED){
   } else {
     Serial.println("Continuing...");
   }
+}
+
+void doBox(){
+  while (boxloop != 4){
+    forwards(150);				//Movesforward at the speed of 150
+    delay(100);
+    forwardcheck(150);			//Checks the counters at the speed of 150
+
+    if (leftcounter >= 172){	//Checks the left counter for 172 clicks
+      stop();
+      delay(1000);
+
+      turnleft(200);			//Angle
+      delay(950);
+
+      stop();
+      delay(1000);
+
+      leftcounter = 0;
+      boxloop++;
+    }
+  }
+  
+  stop();
+  exit(0);
+  
+}
+
+void doFigure8(){
+  forwardsturnleft();
+  delay(2000);
+  
+  forwardsturnright();
+  delay(3000);
+  
+  forwards(200);
+  delay(1000);
+  
+  forwardsturnleft();
+  delay(6000);
+  
+  forwards(200);
+  delay(1000);
+  
+  forwardsturnright();
+  delay(3000);
+  
+  forwardsturnleft();
+  delay(2000);
+  
+  stop();
+  
 }
